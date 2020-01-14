@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+成功!<br/>
+<!--th:text="" 将div里面的内容设置为-->
+<!--th 任意html属性-->
+<div id="div01" class="myDiv" th:id="${hello}" th:class="${hello}" th:text="${hello}">这是显示欢迎</div>
+<hr/>
+<div th:text="${hello}"></div>
+<div th:utext="${hello}"></div>
+<hr/>
+
+<!--th:each每次遍历都会生成当前<h4>标签-->
+<h4 th:each="user:${users}" th:text="${user}"></h4>
+<hr/>
+
+<h4>
+    <span th:each="user:${users}"> [[${users}]] </span>
+</h4>
+
+</body>
+</html>

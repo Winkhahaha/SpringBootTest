@@ -1,0 +1,16 @@
+jdbc:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/cms
+  username: root
+  password: 321654
+
+  AAA:
+    aa:20
+    bb:20
+  ccc:
+    aaa:111
+    bbb:222
+spring:
+  mvc:
+    servlet:
+      path: /
