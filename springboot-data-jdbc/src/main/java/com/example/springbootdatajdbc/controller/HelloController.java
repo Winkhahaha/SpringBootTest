@@ -18,8 +18,8 @@ public class HelloController {
 
     @ResponseBody
     @GetMapping("/query")
-    public Map<String,Object> map(){
-        List<Map<String, Object>> list = jdbcTemplate.queryForList("select * from department");
-        return list.get(0);
+    public List<Map<String, Object>> map() {
+        List<Map<String, Object>> list = jdbcTemplate.queryForList("select * from user");
+        return list;
     }
 }
