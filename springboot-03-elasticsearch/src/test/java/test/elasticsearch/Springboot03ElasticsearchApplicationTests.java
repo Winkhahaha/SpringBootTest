@@ -20,6 +20,7 @@ class Springboot03ElasticsearchApplicationTests {
     @Autowired
     JestClient jestClient;
 
+
     @Test
     void contextLoads() {
         //给es索引中创建一个文档
@@ -28,7 +29,6 @@ class Springboot03ElasticsearchApplicationTests {
         article.setTitle("好消息");
         article.setAuthor("张三");
         article.setContent("hello world");
-
         // 构建一个索引功能
         Index index = new Index.Builder(article).index("test").type("news").build();
         try {
