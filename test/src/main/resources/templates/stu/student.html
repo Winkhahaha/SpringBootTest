@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h3>学生详情</h3>
+<div>
+    <p><strong>ID:</strong><span th:text="${student.id}"></span></p>
+    <p><strong>姓名:</strong><span th:text="${student.name}"></span></p>
+    <p><strong>性别:</strong><span th:text="${student.gender}==0?'女':'男'"></span></p>
+    <p><strong>年龄:</strong><span th:text="${student.age}"></span></p>
+    <p><strong>出生日期:</strong><span th:text="${#dates.format(student.birthday, 'yyyy-MM-dd')}"></span></p>
+    <p><strong>备注:</strong><span th:text="${student.remarks}"></span></p>
+</div>
+<a th:href="@{/stu}">返回首页</a>
+</body>
+</html>

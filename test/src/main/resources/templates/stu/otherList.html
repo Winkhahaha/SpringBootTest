@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h3>模糊查询结果</h3>
+<table border="1">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>年龄</td>
+        <td>出生年月</td>
+        <td>备注</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${stuList}==null">
+        <td colspan="3">没有学生信息</td>
+    </tr>
+    <tr th:each="stu:${stuList}">
+        <td th:text="${stu.id}"></td>
+        <td>
+            <a th:href="@{'/stu/'+${stu.id}}" th:text="${stu.name}"></a>
+        </td>
+        <td th:text="${stu.gender}==0?'女':'男'"></td>
+        <td th:text="${stu.age}"></td>
+        <td th:text="${#dates.format(stu.birthday, 'yyyy-MM-dd')}"></td>
+        <td th:text="${stu.remarks}"></td>
+        <td>
+            <a th:href="@{'stu/delete/'+${stu.id}}">删除</a>
+            <a th:href="@{'stu/edit/'+${stu.id}}">修改</a>
+        </td>
+    </tr>
+    </tbody>
+    <a th:href="@{/stu}">返回首页</a>
+</table>
+</body>
+</html>
