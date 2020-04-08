@@ -13,7 +13,6 @@ public class MyBatisConfig {
     @Bean
     public ConfigurationCustomizer configurationCustomizer(){
         return new ConfigurationCustomizer(){
-
             @Override
             public void customize(Configuration configuration) {
                 //开启驼峰命名
