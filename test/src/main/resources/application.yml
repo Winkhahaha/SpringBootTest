@@ -5,9 +5,14 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/test
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-  jackson:
-    date-format: yyyy-MM-dd
-    time-zone: GMT+8
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: utf-8
+    cache: false
+
 mybatis:
   typeAliasesPackage: com.example.test.entity
   mapperLocations: classpath:mapper/*.xml
