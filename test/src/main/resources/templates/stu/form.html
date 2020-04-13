@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="top"><span style="color:red" th:text="${session.errors}"></span></div>
-<form action="" th:action="@{/stu/add}" method="POST" th:object="${student}">
+<form action="" th:action="@{/stu/add}" method="POST">
     <input type="hidden" name="id">
     名称：<br>
     <input type="text" name="name">
