@@ -13,8 +13,33 @@ spring:
     encoding: utf-8
     cache: false
 
+    #热部署生效
+    devtools:
+      restart:
+        enabled: true
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 200MB
+      enabled: true
+
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+
+filePath:
+  E:\代码仓库\SpringBootTest\test\uploadFiles
+
 mybatis:
   typeAliasesPackage: com.example.test.entity
   mapperLocations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
+
+logging:        # 控制台显示执行SQL
+  level:
+    com.example.test.dao: debug

@@ -3,13 +3,25 @@ package com.example.test.controller;
 import com.example.test.entity.Student;
 import com.example.test.exception.NotFoundException;
 import com.example.test.service.StudentService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/stu")
@@ -30,6 +42,13 @@ public class StudentController {
         model.addAttribute("student", stu);
         return "stu/student";
     }
+
+//    @GetMapping("/one/{id}")
+//    @ResponseBody
+//    public Student getStu(@PathVariable("id") Integer id) {
+//        Student stu = studentService.getStuById(id);
+//        return stu;
+//    }
 
     /**
      * 姓名模糊查询
@@ -120,4 +139,5 @@ public class StudentController {
         }
         return "redirect:/stu";
     }
+
 }

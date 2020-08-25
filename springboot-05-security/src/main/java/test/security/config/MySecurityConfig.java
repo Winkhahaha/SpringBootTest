@@ -19,13 +19,13 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         //开启自动配置的登录功能,如果没有登录则没有权限就会来到登录页面
         //http.formLogin();
         // 设定自己的登录页
-        http.formLogin().usernameParameter("user").passwordParameter("pwd").loginPage("/userlogin");
+        http.formLogin().usernameParameter("user").passwordParameter("pwd").loginPage("/login");
         // 1.login请求来到登录页
         // 2.重定向到/login/error表示登录失败
         // 3.更多详细规则
 
         // 开启自动配置的注销功能
-        http.logout().logoutSuccessUrl("/userlogin");    //注销成功以后来到首页
+        http.logout().logoutSuccessUrl("/");    //注销成功以后来到首页
         // 1.访问/logout表示用户注销并清空session
         // 2.注销成功会返回/login?loginout
 
